@@ -78,5 +78,10 @@
         android:id="@+id/boogleConnectFragment"
         android:name="com.technipixl.eval2.BoogleConnectFragment"
         android:label="fragment_boogle_connect"
-        tools:layout="@layout/fragment_boogle_connect" />
+        tools:layout="@layout/fragment_boogle_connect" >
+        <argument
+            android:name="message"
+            app:argType="string"
+            android:defaultValue="Bonjour" />
+    </fragment>
 </navigation>

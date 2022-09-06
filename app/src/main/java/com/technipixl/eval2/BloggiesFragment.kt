@@ -31,22 +31,21 @@ class BloggiesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val mdp1 = binding.editTextTextPassword2.text
+        val mdp2 = binding.editTextTextPassword3.text
+        val login = binding.editTextTextPersonName.text
         binding.buttonInscription.setOnClickListener {
-            if (isValidEmail(binding.editTextTextEmailAddress2.text)){
-                val action = R.id.action_bloggiesFragment_to_boogleConnectFragment
-                findNavController().navigate(action)
-            } else {
+            if (!isValidEmail(binding.editTextTextEmailAddress2.text)){
                 val builder = AlertDialog.Builder(context)
                 with(builder) {
                     setTitle("Erreur")
-                    setMessage("Login Incomplet")
+                    setMessage("Email Incomplet")
                     setPositiveButton("OK", object: DialogInterface.OnClickListener{
                         override fun onClick(dialog: DialogInterface?, which: Int) {
                         }
                     })
 
                 }.show()
-
             }
             if (binding.editTextTextPersonName.text.isEmpty()){
                 val builder = AlertDialog.Builder(context)
@@ -59,14 +58,8 @@ class BloggiesFragment : Fragment() {
                     })
 
                 }.show()
-            } else {
-                val action = R.id.action_bloggiesFragment_to_boogleConnectFragment
-                findNavController().navigate(action)
             }
-            if(binding.editTextTextPassword2.text == binding.editTextTextEmailAddress2.text){
-                val action = R.id.action_bloggiesFragment_to_boogleConnectFragment
-                findNavController().navigate(action)
-            } else {
+            if(mdp1 == mdp2){
                 val builder = AlertDialog.Builder(context)
                 with(builder) {
                     setTitle("Erreur")
@@ -77,6 +70,9 @@ class BloggiesFragment : Fragment() {
                     })
 
                 }.show()
+            } else {
+                val direction = BloggiesFragmentDirections.actionBloggiesFragmentToBoogleConnectFragment("Bonjour $login")
+                findNavController().navigate(direction)
             }
 
         }
