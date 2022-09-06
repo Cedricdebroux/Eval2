@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/connectionFragment">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.technipixl.eval2.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/twitterFragment"
+        android:name="com.technipixl.eval2.TwitterFragment"
+        android:label="fragment_twitter"
+        tools:layout="@layout/fragment_twitter" >
+        <action
+            android:id="@+id/action_twitterFragment_to_twitterConnectFragment"
+            app:destination="@id/twitterConnectFragment"
+            app:popUpTo="@id/twitterFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/facebookFragment"
+        android:name="com.technipixl.eval2.FacebookFragment"
+        android:label="fragment_facebook"
+        tools:layout="@layout/fragment_facebook" >
+        <action
+            android:id="@+id/action_facebookFragment_to_facebookConnectFragment"
+            app:destination="@id/facebookConnectFragment"
+            app:popUpTo="@id/facebookFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/bloggiesFragment"
+        android:name="com.technipixl.eval2.BloggiesFragment"
+        android:label="fragment_bloggies"
+        tools:layout="@layout/fragment_bloggies" >
+        <action
+            android:id="@+id/action_bloggiesFragment_to_boogleConnectFragment"
+            app:destination="@id/boogleConnectFragment"
+            app:popUpTo="@id/bloggiesFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/connectionFragment"
+        android:name="com.technipixl.eval2.ConnectionFragment"
+        android:label="fragment_connection"
+        tools:layout="@layout/fragment_connection" >
+        <action
+            android:id="@+id/action_connectionFragment_to_twitterFragment"
+            app:destination="@id/twitterFragment"
+            app:popUpTo="@id/connectionFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_connectionFragment_to_facebookFragment"
+            app:destination="@id/facebookFragment"
+            app:popUpTo="@id/connectionFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_connectionFragment_to_bloggiesFragment"
+            app:destination="@id/bloggiesFragment"
+            app:popUpTo="@id/connectionFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/facebookConnectFragment"
+        android:name="com.technipixl.eval2.FacebookConnectFragment"
+        android:label="fragment_facebook_connect"
+        tools:layout="@layout/fragment_facebook_connect" />
+    <fragment
+        android:id="@+id/twitterConnectFragment"
+        android:name="com.technipixl.eval2.TwitterConnectFragment"
+        android:label="fragment_twitter_connect"
+        tools:layout="@layout/fragment_twitter_connect" />
+    <fragment
+        android:id="@+id/boogleConnectFragment"
+        android:name="com.technipixl.eval2.BoogleConnectFragment"
+        android:label="fragment_boogle_connect"
+        tools:layout="@layout/fragment_boogle_connect" />
+</navigation>

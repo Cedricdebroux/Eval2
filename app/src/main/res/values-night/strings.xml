@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bloggies_image">Bloggies</string>
+    <string name="connection_twitter">CONNECTION VIA TWITTER</string>
+    <string name="connexion_facebook">CONNEXION VIA FACEBOOK</string>
+    <string name="connexion_bloggies">CONNEXION D\'UN COMPTE BLOGGIES</string>
+    <string name="twitter_image">Twitter_image</string>
+    <string name="email_hint">Email</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <string name="connexion">Connexion</string>
+    <string name="e_mail_hint">E-mail ?</string>
+    <string name="login_hint">Login ?</string>
+    <string name="password_hint">Password ?</string>
+    <string name="inscription_button">Inscription</string>
+    <string name="image_facebook">image Facebook</string>
+    <string name="greeting">Félicitations vous êtes bien connecté !!!</string>
+</resources>
